@@ -1,0 +1,24 @@
+{
+    "name": "webdriverio-tests",
+    "version": "0.1.0",
+    "private": true,
+    "devDependencies": {
+        "@wdio/cli": "^7.21.0",
+        "@wdio/local-runner": "^7.21.0",
+        "@wdio/mocha-framework": "^7.21.0",
+        "@wdio/spec-reporter": "^7.21.0",
+        "wdio-chromedriver-service": "^7.3.2",
+        "wdio-wait-for": "^2.2.6"
+    },
+    "scripts": {
+        "sitemap": "node sitemap.js",
+        "wdio": "wdio run wdio.conf.js"
+    },
+    "dependencies": {
+        "advanced-sitemap-generator": "^1.8.8",
+        "chromedriver": "^108.0.0",
+        "dotenv": "^16.0.3",
+        "fs": "^0.0.1-security",
+        "wdio-image-comparison-service": "^4.0.0"
+    }
+}
