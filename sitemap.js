@@ -4,7 +4,9 @@ const SitemapGenerator = require('advanced-sitemap-generator');
 const fs = require('fs');
 
 const wdio = require('./wdio.conf.js');
-const basePath = wdio.config.baseUrl;
+const basePath = process.env.PREV_URL;
+
+console.log('\x1b[33mGenerating SITEMAP for ' + basePath + ' \x1b[0m');
 
 // create generator
 const generator = SitemapGenerator(basePath, {
