@@ -1,6 +1,8 @@
 require('dotenv').config()
 const { join } = require('path');
 
+const url = process.env.IS_GENERATE ? process.env.PREV_URL : process.env.BASE_URL;
+
 exports.config = {
   //
   // ====================
@@ -97,7 +99,7 @@ exports.config = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
-  baseUrl: process.env.BASE_URL || 'http://localhost',
+  baseUrl: url || 'http://localhost',
   //
   // Default timeout for all waitFor* commands.
   waitforTimeout: 10000,
@@ -226,8 +228,11 @@ exports.config = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {Object}         browser      instance of created browser/device session
      */
-  // before: function (capabilities, specs) {
-  // },
+  before: function (capabilities, specs) {
+   if (process.env.IS_MOBILE) {
+      browser.setWindowSize(390, 844);
+   }
+  },
   /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name

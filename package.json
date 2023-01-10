@@ -12,7 +12,9 @@
     },
     "scripts": {
         "sitemap": "node sitemap.js",
-        "wdio": "wdio run wdio.conf.js"
+        "generate": "rm -r -f screenshots/ && IS_GENERATE=1 wdio run wdio.conf.js && IS_GENERATE=1  IS_MOBILE=1 wdio run wdio.conf.js",
+        "wdio": "wdio run wdio.conf.js",
+        "wdio:mobile": "IS_MOBILE=1 wdio run wdio.conf.js"
     },
     "dependencies": {
         "advanced-sitemap-generator": "^1.8.8",
