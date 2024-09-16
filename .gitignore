@@ -1,6 +1,7 @@
 node_modules/
-tmp/
-screenshots/
-sitemap.json
-sitemap.xml
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/tests/*.spec.js-snapshots/
 .env

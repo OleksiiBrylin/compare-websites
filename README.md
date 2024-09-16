@@ -1,12 +1,25 @@
-# Instruction
-1. `npm i`
-2. `cp .env.example .env`
-3. Fill `BASE_URL` and `PREV_URL` in .env (it should be old version of a website)
-4. `npm run sitemap` (it will generate sitemap.json for PREV_URL version)*
-5. `npm run generate` to generate screenshots from previous version
-6. update dependencef of browser if errors exist
-8. `npm run wdio && npm run wdio:mobile`
-9. in `tmp/diff` folder will be result
 
-*Note: the script doesn't generate sitemap if set nofollow in robots
-**Note: you can change `sitemap.json` file to add/remove links, for examle you can add /404 page
+* Copy tests/example.spec.js and rename it to tests/{project}.spec.js
+* Set up `pages`, `domain`, `project`, `cssFilePath` variables in the new file from step 1
+* To generate pages list you can use `php please static:warm` command in a Statamic project folder
+* `npx playwright test {project}.spec.js --update-snapshots` or add this command to `package.json` -> scripts object
+* change domain name to local domain name in tests/{project}.spec.js
+* `npx playwright test {project}.spec.js`
+
+Note: ./styles/testing.css file helps to hide dynamic elements or disable a header scrolling
+
+
+to get a list of all urls you can open {project-domain}/sitemap.xml and store it locally.
+Then find and replace via VCode
+```
+    <url>
+        <loc>(.*)</loc>
+        <lastmod>.*</lastmod>
+        <changefreq>.*</changefreq>
+        <priority>.*</priority>
+    </url>
+```
+to 
+```
+$1
+```

@@ -1,0 +1,44 @@
+img.lazy, img.lazy.loaded {
+    opacity: 0 !important;
+    /* content: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIA0KCSB2aWV3Qm94PSIwIDAgMzIgMzIiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHJlY3QgZmlsbD0iZ3JheSIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIi8+DQo8L3N2Zz4="); */
+}
+
+body .mapbox {
+    display: none;
+}
+
+.intro-video__player {
+    display: none;
+}
+
+.content-teaser--custom {
+    background: burlywood;
+}
+
+.nav-circle {
+    display: none !important;
+}
+/* #footer{
+    display: none !important;
+} */
+
+.swiper-wrapper {
+    transform: none !important;
+}
+
+/* https://www.egghoelzli.ch/ */
+.header {
+    position: absolute !important;
+}
+.parallax__layer--back {
+    transform: none !important;
+}
+
+/* https://www.herbstmesse.ch/ */
+#cookie-bar, #app .footer {
+    display: none !important;
+}
+
+.parallax__content {
+    transform: none !important;
+}
